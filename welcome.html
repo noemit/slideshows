@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>slideshows</title>
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+	<!-- JavaScript codes -->
+	<script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
+	<script src="js/jquery.fullscreenr.js" type="text/javascript"></script>
+	<script src="js/jqFancyTransitions.min.js" type="text/javascript"></script>
+	<STYLE type="text/css">
+	   body {background:white;overflow:hidden;}
+	   #header {display:none;}
+	   #glayout {padding-top:34px;}
+	   .box {background:#ccc;float:left; width:200px; height: 200px; margin:10px; display:none; }
+	   .big {background:#ccc;float:left; width:420px; height: 200px; margin:10px; display:none; }
+	 </STYLE>
+
+<script>
+
+function animate(myArray, start_index) {
+
+    // Stealing this line from Sam, who posted below.
+    if(!start_index) start_index = 0;
+
+    next_index = start_index+1;
+    if(next_index > myArray.length) { return; }
+
+    $(myArray[start_index]).fadeIn("fast", function() { animate(myArray,next_index); });
+}
+
+$(document).ready(function(){
+	$("#header").slideDown("9000");
+	$("#header").show( function() { animate($.makeArray($(".box"))); } );
+});
+
+
+</script>
+
+
+
+</head>
+
+<body>
+
+<div id="header">
+<div id="h-left">
+	sli.desho.ws
+</div>
+</div>
+
+<div id="glayout">
+<div class="box" style="Background:url('http://upload.wikimedia.org/wikipedia/commons/8/81/Sky_over_Washington_Monument.JPG') center;"></div>
+<div class="box big" style="Background:url('http://noemi.ro/wp-content/uploads/2014/05/exciting-miniature-lego-office-yard-digital-11-e1401498860946.jpg') center;"></div>
+<div class="box" style="Background:url('http://noemi.ro/wp-content/uploads/2012/10/wpid-C360_2012-10-28-01-31-35.jpg') center;"></div>
+<div class="box" style="Background:url('http://noemi.ro/wp-content/uploads/2012/10/545425_728280504881_1405690447_n1-e1350291325878.jpg') center;"></div>
+<div class="box" style="Background:url('http://nightsky.jpl.nasa.gov/images/news/hubble_ext100k.JPG') center;"></div>
+<div class="box" style="Background:url('http://noemi.ro/wp-content/uploads/2014/05/exciting-miniature-lego-office-yard-digital-11-e1401498860946.jpg') center;"></div>
+<div class="box" style="Background:url('http://i.telegraph.co.uk/multimedia/archive/01372/hourglass_1372952i.jpg') center;"></div>
+<div class="box" style="Background:url('http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/advent_12_09/a01_00000001.jpg') center;"></div>
+<div class="box" style="Background:url('http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/advent_12_09/a01_00000001.jpg') center;"></div>
+<div class="box big" style="Background:url('http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/advent_12_09/a01_00000001.jpg') center;"></div>
+<div class="box" style="Background:url('http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/advent_12_09/a01_00000001.jpg') center;"></div>
+<div class="box" style="Background:url('http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/advent_12_09/a01_00000001.jpg') bottom left;"></div>
+<div class="box" style="Background:url('http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/advent_12_09/a01_00000001.jpg') bottom center;"></div>
+<div class="box" style="Background:url('http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/advent_12_09/a01_00000001.jpg') top;"></div>
+<div class="box" style="Background:url('http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/advent_12_09/a01_00000001.jpg') left;"></div>
+<div class="box" style="Background:url('http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/advent_12_09/a01_00000001.jpg');"></div>
+
+</div>
+
+</body>
+</html>
